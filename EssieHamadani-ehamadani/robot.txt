@@ -1,0 +1,21 @@
+# If you don't know how to open a door, read instructions below:
+
+A. Robot, take this key. 
+
+B. Robot, swing the door entirely open. 
+
+B. Robot, sit in driver side seat and place both feet inside the car. Then close the door with your left hand.
+
+C. Robot, place right foot on the brake.
+
+D. Robot, put the key in the ignition and turn the key. 
+
+E. Robot, put on your seatbelt. 
+
+F. Robot, put the car in drive. 
+
+G. Robot, put both hands on the steering wheel. 
+
+H. Robot, put right foot on gas pedal. 
+
+I. Robot, acclerate until you reach 10 mph. 

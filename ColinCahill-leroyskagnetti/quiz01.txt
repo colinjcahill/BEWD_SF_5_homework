@@ -1,0 +1,13 @@
+Quiz, 8-7-14.  Colin Cahill
+
+
+1)  To change directories, we type "cd [directory name]."  To move to a specific subdirectory of a folder, we can type "cd [parent/child]".  To move to the parent of the current directory, we can type "cd .."
+
+2)  Git is a cloud-baesed version control program which allows users to group files into indexed 'commits,' as well as handles merge conflicts, reversions, etc.  Github is the web component of Git.  Github is the name of the cloud storage site, as well as the web UI for the same source controls.
+
+3)  To add files via git, we will need to add them to a "cache" or "index" (or "stage").  We can do this by typing "add [filename or folder]".  For instance, to add the current working directory, a user can type "git add ."  To commit these changes to the local repository, the user can then enter "git commit."  Finally, to push these changes to the remote repository (origin), a user can type "git push".
+
+4)  A git repository is the source-controlled folder which contains a user's code.  All pull and push requests go through a repository.
+
+5)  c. git push
+

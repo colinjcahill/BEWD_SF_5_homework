@@ -1,0 +1,5 @@
+1. cd
+2. Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. GitHub is a Git repository web-based hosting service which offers all of the functionality of Git as well as adding many of its own features. 
+3. git add 
+4. git repository is a local store of your changes before it is commited to your origin online.
+5. git push

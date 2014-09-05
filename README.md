@@ -16,7 +16,7 @@ Follow these directions closely to switch over to this repository.
 Example of what your folders should look like:
 
 ```
-~/projects/BEWD_SF_5/BrianBugh-bbugh/midterm/midterm.rb
+~/projects/BEWD_SF_5_homework/BrianBugh-bbugh/midterm/midterm.rb
 ```
 
 Instructions

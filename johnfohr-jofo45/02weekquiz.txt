@@ -1,0 +1,11 @@
+1) cd
+2) Git: version control system.   Github: a website that allows you to use Git.  GitHub the service for projects that uses Git.
+3) add, commit, and then push
+4)  A location on your local computer which allows to store a forked version of code.
+
+5) c
+$ git pull
+$ git add .  #put specific file name
+$ git commit -m 'initial commit' #put description of updated code
+$ git push 
+

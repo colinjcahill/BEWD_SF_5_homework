@@ -1,0 +1,11 @@
+1. cd [new directory]
+
+2. 	a) Git is a distributed version control system that runs locally 
+
+	b) Github is a central place that makes it easy to upload your git repositories and sync your code with teamates
+
+3. You add files to git by creating them in a directory on which git is running. You can start git running on a repository by typing git init. Once you have created files or made changes you type git add [filename]. Then you type git commit -m "[message]".
+
+4. A git repository is a collection of files in a folder that is under git's version control
+
+5. The correct way to push to github once you've already added and committed your changes is with "git push"

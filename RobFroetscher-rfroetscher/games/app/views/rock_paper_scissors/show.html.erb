@@ -1,0 +1,5 @@
+<h1>Result:</h1>
+<h3>You chose <%= @options[@player_choice][:name] %>.</h3>
+<h3>The computer chose <%= @options[@computer_choice][:name] %>.</h3>
+<%= render @outcome %>
+<h3><%= link_to "Try again?", new_rock_paper_scissor_path %></h3>

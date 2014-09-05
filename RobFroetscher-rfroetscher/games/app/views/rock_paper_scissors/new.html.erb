@@ -1,0 +1,8 @@
+<h1>Welcome to Rock, Paper, Scissors</h1>
+<p>To start the game, make a choice below:</p>
+
+<ul>
+	<% @options.each do |item| %>
+	<li><%= link_to item[:name], rock_paper_scissor_path(item[:number]) %></li>
+	<% end %>
+</ul>

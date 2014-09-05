@@ -1,0 +1,22 @@
+<h1>Welcome to Rock Paper Scissors!</h1>
+
+<p>To play this game, pick <em>Rock</em>, <em>Paper</em>, or <em>Scissors</em>. The computer will throw against you, and results are as follows:
+
+<ul>
+	<li>Rock beats scissors</li>
+	<li>Scissors beats paper</li>
+	<li>Paper beats rock</li>
+	<li>Same throws tie and user plays again</li>
+</ul>
+
+<p>Choose carefully:</p>
+
+<ul>
+	<table>
+		<tr>
+			<% @throws.each_with_index do |throw, num| %>
+				<td><%= link_to image_tag("#{throw}.jpg", :height => 100), rock_paper_scissor_path(num) %></td>
+			<% end %>
+		</tr>
+	</table>
+</ul>

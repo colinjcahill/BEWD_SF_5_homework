@@ -1,0 +1,9 @@
+[1] How do I change directories using the command line? cd 'dir'
+
+[2] What is a) Git and b) GitHub? Git is a distributed revision control and source code management system, and GitHub is an online Git repository hosting system.
+
+[3] How do I add files to Git? git add .
+
+[4] What is a git repository? A data structure that contains files, directories and a historical record of changes
+
+[5] What is the correct way to push local changes to your GitHub repo? c. git push

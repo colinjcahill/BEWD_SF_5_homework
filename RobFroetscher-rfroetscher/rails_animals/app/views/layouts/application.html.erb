@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsAnimals</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <style type="text/css">
+  		body { background-image: url(http://cdn1.cowbird.com/items/pages/2013/03/22/15/05/120027/2287_514c731fc4d8a0.48075423-big.jpg);
+  			background-position: center bottom;
+  			background-repeat: none;
+  			
+  		}
+  		.main{
+  			background-color: #FFFFFF;
+  			padding: 5px;
+  		}
+  </style>
+</head>
+<body>
+
+<div class="main">
+<%= yield %>
+</div>
+
+</body>
+</html>
