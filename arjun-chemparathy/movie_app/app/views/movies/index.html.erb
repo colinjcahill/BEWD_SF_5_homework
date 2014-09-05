@@ -1,0 +1,8 @@
+<h1>Welcome to RetFlix!</h1>
+
+<% @display_movies.each do |movie|%>
+<ul> <li><strong><%= movie.title%></strong>
+<%=movie.description%>
+<i><%=movie.year_released%></i>	</li> </ul>
+<% end %>
+
