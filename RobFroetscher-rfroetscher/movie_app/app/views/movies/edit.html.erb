@@ -1,0 +1,8 @@
+<h1>Edit <%= @movie.title %></h1>
+<% if @movie.invalid? %>
+<p>There was a problem saving your movie:</p>
+	<% @movie.errors.full_messages.each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+<% end %>
+<%= render 'form' %>
