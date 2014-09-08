@@ -1,4 +1,6 @@
 class RockPaperScissorsController < ApplicationController
+  before_action :set_options, only: [:new, :show]
+
   def new
   	@options = get_options
   end
@@ -26,7 +28,7 @@ class RockPaperScissorsController < ApplicationController
   		
   end
 
-  def get_options
+  def set_options
    [{name: "Rock", number: 0},{name: "Paper", number: 1}, {name: "Scissors", number: 2}]
   end
 
