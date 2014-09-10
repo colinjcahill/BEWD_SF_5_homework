@@ -15,28 +15,28 @@ class TwitterConnection
   def initialize
   # Initializes new connection to Twitter API.
   # connection info found here:  http://rdoc.info/gems/twitter
-  
-  
+
+
      puts "Loading New Twitter Session".center(100,"~")
      @client = Twitter::REST::Client.new do |config|
        config.consumer_key        = "1OjqzZ6XVPN6hbyWWVhR5hrNw"
        config.consumer_secret     = "UvZSkz63JEJoPJ9tuTDEdTvbGAQlj46iMtDFjy33m3OGzmpZ4O"
        config.access_token        = "149583545-UFOXnvuFn2Ug0Ujeyz6O9hCFuWZCJx0jTCfvJGcR"
-       config.access_token_secret = "yJmaXu5OrwvaJp6XE0Ie4EdNZORLOxxQK9RlUmCIdnQZ3" 
+       config.access_token_secret = "yJmaXu5OrwvaJp6XE0Ie4EdNZORLOxxQK9RlUmCIdnQZ3"
       end
   end
 
- 
+
   def search_input
 
    # Gets search query from user
-    
+
     puts "Please enter a search term on Twitter:"
     @query = gets.chomp
       if @query.empty?
         puts "You must enter a valid search term."
         self.search_input
-      else
+      else ############# no need for this else here #################
       end
   end
 
@@ -75,17 +75,17 @@ class TwitterConnection
         sleep 0.5
         @search_radius =  @search_radius * 2
         self.location_search(query,coordinates)
-      else 
+      else############# no need for this else here #################
       end
   end
 
   def location_search_results
     @results.each do |tweet|
     puts "".center(100,"_")
-    puts "\nUser:\t@#{tweet.attrs[:user][:name]}\nTweet Text:\t\"#{tweet.attrs[:text]}\"\nTweet time:\t#{tweet.attrs[:created_at]}\nLocation:\t#{tweet.attrs[:place].class == Hash ? tweet.attrs[:place][:full_name] : tweet.attrs[:user][:location] || "Location not found"}"  
+    puts "\nUser:\t@#{tweet.attrs[:user][:name]}\nTweet Text:\t\"#{tweet.attrs[:text]}\"\nTweet time:\t#{tweet.attrs[:created_at]}\nLocation:\t#{tweet.attrs[:place].class == Hash ? tweet.attrs[:place][:full_name] : tweet.attrs[:user][:location] || "Location not found"}"
     puts "".center(100,"_")
     sleep 0.5
-  end
+  end############# make sure to use the right indentation...otherwise you might lose track of your 'do' and 'end' tags#################
   end
 
 end
