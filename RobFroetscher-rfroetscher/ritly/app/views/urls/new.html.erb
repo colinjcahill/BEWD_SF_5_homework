@@ -1,0 +1,14 @@
+<h1>Welcome to Ritly!</h1>
+<p>Shorten your link by entering it below:</p>
+
+<%= form_for @url do |f| %>
+
+<div class="form">
+	<%= f.label :link %>
+	<%= f.text_field :link %>
+</div>
+
+<div class="submit">
+	<%= f.submit %>
+
+<% end %>
