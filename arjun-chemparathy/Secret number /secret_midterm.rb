@@ -1,0 +1,11 @@
+puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+puts "Hello!"
+puts "welcome to the Secret Number Game!"
+puts "What's your name?"
+
+puts "Rules!"
+puts "-------"
+puts "Guess a number between 1 and 10"
+puts "You have a 3 attempts to guess it correctly"
+puts "If you fail, you may play again"
+puts "May the force be with you"
