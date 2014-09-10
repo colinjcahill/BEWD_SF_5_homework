@@ -7,6 +7,10 @@ class UrlsController < ApplicationController
   	@url = Url.find(params[:id])
   end
 
+  def preview
+  	@url = Url.where(:code => params[:code]).first
+  end
+
   def redirectors
   	@url = Url.where(:code => params[:code]).first
   	if @url
