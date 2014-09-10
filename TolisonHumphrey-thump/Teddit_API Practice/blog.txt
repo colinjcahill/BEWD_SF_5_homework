@@ -1,5 +1,0 @@
-Aug 5- Learning how to use git. www.thblog.com
-git add . places the entire folder into the local repository
-git commit -m "Statement of Changes made to file" commits changes stating what has been done 
-git push origin remote saves to the origin (remote repository-GitHub)
-git remote --verbose shows the name of the origin from which to fetch and push
