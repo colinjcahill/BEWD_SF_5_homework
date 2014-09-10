@@ -9,7 +9,7 @@ class Participant
 
 end
 class Recipient < Participant
-	attr_accessor :name, :email 
+	attr_accessor :name, :email
 
 	def initialize
 		get_details
@@ -18,12 +18,12 @@ class Recipient < Participant
 	def get_details
 		puts "What's the name of the person you would like to send this email to?"
 		@name = gets.chomp
-		while true
+		while true ###### while what is true?
 			puts "Enter your recipient's email address to send."
 			@email = gets.chomp
 			if verify_email(@email) == true
 				break
-			else 
+			else
 				puts "That email address doesn't look right. Please enter it again."
 			end
 		end
@@ -42,12 +42,12 @@ class Sender < Participant
 	def get_details
 		puts "What's your name?"
 		@name = gets.chomp
-		while true
+		while true ###### while what is true ?
 			puts "What's your email address?"
 			@email = gets.chomp
 			if verify_email(@email) == true
 				break
-			else 
+			else
 				puts "That email address doesn't look right. Please enter it again."
 			end
 		end
@@ -62,14 +62,14 @@ class Sender < Participant
 	def template_prefs
 		puts "What kind of email would you like to send? Enter the number below: \n 1) Love email (romantic)\n 2) Congratulatory email"
 		response = gets.chomp
-		while true
+		while true ##### while what is true?
 			if response == "1" or response.downcase.include? "congratulatory"
 				@template = "love"
 				break
 			elsif response == "2" or response.downcase.include? "love"
 				@template = "congrats"
 				break
-			else 
+			else
 				puts "Please enter 1, 2, or 3"
 				response = gets.chomp
 			end

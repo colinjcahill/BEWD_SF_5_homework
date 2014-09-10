@@ -13,7 +13,7 @@ class Mailing
 		                           :port      => 587,
 		                           :domain    => "waterthought.org",
 		                           :user_name => "robfroetscher",
-		                           :password  => "yCXas9Un", 
+		                           :password  => "yCXas9Un", ##### checking passwords into github can be dangerous!!!
 		                           :authentication => 'plain',
 		                           :enable_starttls_auto => true }
 		end
