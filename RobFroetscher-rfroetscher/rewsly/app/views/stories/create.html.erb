@@ -1,0 +1,8 @@
+<h1>There was a problem saving your story</h1>
+<ul>
+<% @story.errors.full_messages.each do |e| %>
+<li><%= e %></li>
+<% end %>
+</ul>
+
+<%= link_to "Try again", new_story_path %>

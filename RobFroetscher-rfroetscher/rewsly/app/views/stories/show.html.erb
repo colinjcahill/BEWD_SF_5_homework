@@ -1,0 +1,6 @@
+<h1><%= @story.title %></h1>
+<p>Category: <%= @story.category %></p>
+<p>UpVotes: <%= @story.upvotes.to_s %></p>
+<p>Link: <%= link_to @story.link, @story.link %></p>
+
+<%= link_to "Back", root_path %>
