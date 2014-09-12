@@ -4,6 +4,7 @@ require_relative  'lib/linked_accounts'
 require_relative  'lib/reddit'
 require  'date'
 require 'pry'
+require 'pry-debugger'
 
 def initial_signup
 	puts "\nWhat is your email?\n"
@@ -23,12 +24,12 @@ def additional_info
 
 	puts "\n\nWhat is your sex?\n(m)ale\n(f)emale\n"
 	sex_response = gets.strip.downcase
-	
+
 	until sex_response == 'm' || sex_response == 'f'
 	puts "Oh no!  I don't understand what you wrote.  What is your sex?\n(m)ale\n(f)emale\n"
 	sex_response = gets.strip.downcase
 	end
-	
+
 	case sex_response
 	when "m"
 		@account.sex = 'male'
@@ -42,7 +43,7 @@ def additional_info
 	puts "What month were you born? (i.e. 01, 02, 03, etc)"
 	dob_month = gets.strip.to_i
 		until dob_month > 0 && dob_month <= 12
-		puts "Sorry, I don't understand.  What month were you born? (i.e. 01, 02, 03, etc).  Please enter a month between 1-12." 
+		puts "Sorry, I don't understand.  What month were you born? (i.e. 01, 02, 03, etc).  Please enter a month between 1-12."
 		dob_month = gets.strip.to_i
 		end
 		case dob_month
@@ -80,7 +81,7 @@ def additional_info
 	dob = Date.new(dob_year,dob_month,dob_day)
 	@account.date_of_birth = dob
 
-	
+
 	# account = Signup.new(email, name)
 
 	puts "#{@account.date_of_birth}."
@@ -104,7 +105,7 @@ def confirm_email_name
 
 	if @email_name_confirmation == 'y'
 		puts "Excellent!"
-	else @email_name_confirmation == 'n'
+	elsif @email_name_confirmation == 'n'
 		puts 'clear'
 		puts "oh no!  No worries, we can correct that!\n"
 		initial_signup
@@ -129,7 +130,18 @@ def link_health_account_to_user
 	# while account_to_link.nil?
 	puts `clear`
 	puts "Please choose which accounts you would like to connect.  (Please enter a number.)"
+
+	################################Bryan's Changes###################################
 	puts "#{list_each_available_account}"
+	### So it looks like your method 'list_each_available_account' was printing the information
+	### but then was also returning the whole array. So a method will do the things you ask it to
+	### but then it will also return a value. So here is was printing like you asked it to, but
+	### it then returned the array it was working on. So instead if you just returned a string
+	### from that method, it would not default to returning the array after it printed the strings.
+	##################################################################################
+
+
+
 	puts "\n\n\n\n\n\nINSTRUCTOR QUESTION:  How do i remove the code from displaying the entire array in this screen?"
 	# account_to_link = gets.strip.to_i
 
@@ -138,7 +150,7 @@ def link_health_account_to_user
 		if valid_options.include?(input)
 			account_to_link = input
 		end
-	end	
+	end
 
 	account = @account_options.find { |account| account.account_code == account_to_link }
 	# account = Account.find_by(account_code: account_to_link)
@@ -158,11 +170,14 @@ def link_health_account_to_user
 	end
 end
 
-# def list_each_available_account
-# 	@account_options.each do |individual_account|
-# 		puts "#{individual_account.account_code}.  #{individual_account.account_name}\n"
-# 	end
-# end
+def list_each_available_account
+	@account_options.each do |individual_account|
+		 "#{individual_account.account_code}:#{individual_account.account_name}\n"
+		 ######################## Bryan's Notes ####################################
+		 ## I took the puts off, this method should only return a string, and the code
+		 ## above handles the printing of the value that this method gives it.
+	end
+end
 
 
 def reddit_display
@@ -209,3 +224,32 @@ link_health_account_to_user
 additional_info
 
 reddit_display
+
+
+
+
+
+
+
+
+
+
+
+
+#####################################################################################
+################################Bryan's Notes########################################
+##  Hey John, Greate Job here. You really created a program with a complicated flow.
+## I like that you really tried to used methods and some classes to divide up the
+## functionality of the program. I left you some notes about halfway up the page about
+## how to solve your pesky array issue. Great job on making a call to the reddit API.
+## It feels like that part is not really inline with the rest of the app, but I appreciate
+## you putting it in there to make sure you met the midterm requirements. Your code is
+## pretty clean and well indented, that important for readability and debugging in the
+## long run.
+## In the future when you are writing the program, I would challenge you to try to prepare
+## for whatever the user might enter. For example, I can enter what ever I want to for the
+## email and name etc. You did a good job of making sure the user stays within the bound of
+## the program in most places, but in general expect the user to mess up alot.
+## Let me know if you would like further explanation here, but in general I can tell you
+## understand everything we expected you to for this midterm.
+
