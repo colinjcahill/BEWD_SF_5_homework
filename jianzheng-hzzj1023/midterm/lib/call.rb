@@ -18,6 +18,7 @@
 		while call_type != "title" && call_type != "category" && call_type != "upvotes"
 		   puts "Please enter one of the three search criterias: title, category or upvotes"
 		   call_type = gets.chomp
+		   ##### you should use the instance variable @call_type here.#######
 		end
 
 	end
@@ -35,15 +36,15 @@
 
 		if @call_type == "category" or @call_type == "title"
 			while @call_content.to_i != 0 or @call_content == "0"
-			puts "Please enter a String for your search" 
+			puts "Please enter a String for your search"
 			@call_content = gets.chomp
 		end
 		end
 
 		if @call_type == "upvotes"
-			  
+
 			while @call_content != "0" && @call_content.to_i == 0
-			puts "Please enter a number for your search" 
+			puts "Please enter a number for your search"
 			@call_content = gets.chomp
 		end
 		@call_content = @call_content.to_i

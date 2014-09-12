@@ -1,3 +1,5 @@
+require 'pry'
+require 'pry-debugger'
 	class TedditSearch
 
 		  def initialize(call, json_data)
@@ -14,10 +16,11 @@
 		  end
 #This is where the search is done, depending on the three different search types, different methods are used
 		def search (search_type, search_content)
+
 #if user search in title, check if the title contains the string user searched
 		if search_type == "title"
 
-			@json['data']['children'].each do |story|	
+			@json['data']['children'].each do |story|
 				if story['data']['title'].include? search_content
 					create_results story
 				end
@@ -26,7 +29,7 @@
 
 #if user search in category, check if the category matches the string user searched
 		if search_type == "category"
-			@json['data']['children'].each do |story|	
+			@json['data']['children'].each do |story|
 				if story['data']['subreddit'] == search_content
 					create_results story
 				end
@@ -34,8 +37,8 @@
 		end
 
 #if user search in upvotes, return the stories that has upvotes more than the number user entered
-		if search_type == "upvotes"
-			@json['data']['children'].each do |story|	
+	if search_type == "upvotes"
+			@json['data']['children'].each do |story|
 				if story['data']['ups'] >= search_content
 					create_results story
 				end
@@ -51,11 +54,11 @@
 
 #outputs the result stories
 		def show_all_stories(stories)
-		if stories.length > 0	
+		if stories.length > 0
 		  stories.each do |story|
 		    puts "Story: #{story[:title]}, Category: #{story[:category]}, Current Upvotes: #{story[:upvotes]}"
 		  end
-		else 
+		else
 			puts "There is no story matching your search"
 		end
 
