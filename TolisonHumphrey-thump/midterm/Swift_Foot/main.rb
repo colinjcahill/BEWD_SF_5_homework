@@ -1,4 +1,4 @@
-#Commentary: This is fantastic! Great use of multiple classes, instance_variables, APIs and an original idea!
+#Commentary: Great use of multiple classes, instance_variables, APIs and an original idea!
 #One suggestion: re: activity_evaluation within manko_pei. Try to refactor that so that it includes 
 
 

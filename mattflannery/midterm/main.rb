@@ -1,4 +1,5 @@
-$:.unshift (File.dirname(__FILE__))
+#Solid use of multiple classes, inheritance, conditionals, private, local && instance_variables
+#MULTIPLE APIs and pretty cool!
 
 require_relative 'client'
 require_relative 'coinbase_client'
