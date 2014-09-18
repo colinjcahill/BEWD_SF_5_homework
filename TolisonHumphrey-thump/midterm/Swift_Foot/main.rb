@@ -1,3 +1,7 @@
+#Commentary: This is fantastic! Great use of classes, instance_variables, APIs and an super original idea!
+#One suggestion: re: activity_evaluation within manko_pei. Try to refactor that so that it includes 
+
+
 require_relative 'lib/manko_pei'
 
 puts 'Welcome to SwiftFoot! Where we help you select the best upcoming fitness event based on your lifestyle.'

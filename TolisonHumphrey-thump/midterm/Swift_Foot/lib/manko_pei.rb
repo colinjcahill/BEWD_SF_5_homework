@@ -21,7 +21,7 @@ class Manko_Pei
 
 		puts "You are burning #{daily_calburn} calories per day"
 
-
+        #might want to make this part a private method that is called by activity_evulation to reduce the size 
 		if @step_count < 7499
 			@user.category = 'couch_potato'
 			puts "You are a Couch Potato!\n\nGet off the couch! You are living an unhealthy, sedentary lifestyle.\n\n"
@@ -35,6 +35,7 @@ class Manko_Pei
 	
 		activity = ['walk','salsa','marathon']
 
+        #same above 
 	 	if @user.category == 'couch_potato'
 	 		n = 0
 	 	elsif @user.category == 'average'
