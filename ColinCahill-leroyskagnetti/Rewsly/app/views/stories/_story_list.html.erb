@@ -1,0 +1,17 @@
+<% if @stories.any? %>
+
+		<% @stories.order(created_at: :desc, title: :asc).each do |story| %>
+		  <section>
+		    Title: <%= link_to story.title, story %><br>
+		    Category: <%= story.category %><br>
+		    Upvotes: <%= story.upvotes %><br>
+		  </section>
+		  <br/>
+		<% end %>
+<% else %>
+
+<br><p>
+<h3>Sorry, we couldn't locate any stories with that search term.  Please try entering a new search.<h3>
+
+
+<% end %>
