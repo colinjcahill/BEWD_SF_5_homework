@@ -1,5 +1,10 @@
 # Well not the most complicated thing in the world... but IS A HUGE step for me!
 # I'm hoping to maybe get some links to open at some point. Maybe figure out the API part :) 
+
+#Commentary:
+ # Firm understanding and use of classes, instance variables, which the critical
+ # Let's work on integrating rest-client && an API together during office hours.
+
 class User
   attr_accessor :name
 
@@ -68,7 +73,6 @@ class Videos
   end
 
 end
-
 
 puts "Hello, welcome to Happy Videos!"
 puts "Our goal is to improve your day with interesting videos!"
