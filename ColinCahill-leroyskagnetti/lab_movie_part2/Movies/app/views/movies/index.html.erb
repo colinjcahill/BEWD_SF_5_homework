@@ -1,0 +1,14 @@
+<h1>These is the movies we got:</h1>
+
+<p><%= notice %></p>
+
+Search for a movie:
+
+<%= form_tag movies_path, method: "GET" do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+Would you like to <%= link_to "create a new movie", new_movie_path %>?
+
+<%= render 'list' %>

@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<%  end %>
+
+<h1>Okay, so lemme get this straight:</h1>
+<h2>You're tellin me that...</h2>
+<ul>
+<li><h2>"<%= @story.title %>," or somethin' like that.</h2></li>
+<li><h2>This is in the category of "<%= @story.category %>."</h2></li>
+<li><h2><%= @story.upvotes %> people have upvoted this story.</h2></li> 
+<li><h2>I can read the original here: <%= link_to "#{@story.link}", @story.link %> </h2></li>
+</ul>
+
+You can <%= link_to "Edit", edit_story_path %> this story, or <%= link_to "Return to the home page", stories_path %>

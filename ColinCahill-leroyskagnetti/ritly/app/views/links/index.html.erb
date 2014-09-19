@@ -1,0 +1,13 @@
+Welcome to Ritly!
+
+Please enter the Url you would like to shorten:
+
+<%= form_for @link do |f| %>
+ <div>
+ 	<%= f.label :link %>
+ 	<%= f.text_field :link %>
+
+ 	<%= f.submit %>
+ </div>
+ 
+  <% end %>

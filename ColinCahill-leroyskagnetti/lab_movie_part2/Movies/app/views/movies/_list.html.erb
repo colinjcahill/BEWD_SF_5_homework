@@ -1,0 +1,29 @@
+<% @movies.each do |movie| %>
+  <section>
+    <header>
+      (<b><%= movie.year_released %></b>)
+      <%= link_to movie.title, movie %>
+    </header>
+    <%= movie.description %>
+  </section>
+  <br/>
+<% end %>
+
+
+
+<!-- <table id="Movies_Table">
+<tr>
+	<td>Title:</td>
+	<td>Description:</td>
+	<td>Year Released:</td>
+<% @movies.each do |movie| %>
+<tr>
+	<td><%= movie.title %></td> 
+	<td><%= movie.description %></td>
+	<td><%= movie.year_released %></td>
+</tr>
+<% end %>
+</table>
+<p>
+
+ -->

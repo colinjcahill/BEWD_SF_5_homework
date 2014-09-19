@@ -1,0 +1,20 @@
+<h1>Welcome to Rewsly!</h1>
+<h2>Your #1 BEWD-Class source for prefabricated news.</h2>
+
+<h2>Have a great story? <%= link_to "Add it here.", new_story_path %></h2>
+
+<h1>Whatcha lookin' for, kid?</h1>
+
+<%= form_tag stories_path, method: "GET" do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<br/><br/>
+
+Today's top stories:
+
+<%= render 'story_list' %>
+
+
+

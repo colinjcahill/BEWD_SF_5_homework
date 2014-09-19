@@ -1,0 +1,5 @@
+<h1>Movie title: <%= Movie.find(params[:id]).title %></h1>
+<h3>Movie description: <%= Movie.find(params[:id]).description %></h3>
+<h2>Year releasd: <%= Movie.find(params[:id]).year_released %></h2>
+
+Would you like to <%= link_to "view all movies", movies_path %> or <%= link_to "create a new entry", new_movie_path %> or <%= link_to "edit a movie", edit_movie_path %>?

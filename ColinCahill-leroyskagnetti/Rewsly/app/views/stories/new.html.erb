@@ -1,0 +1,39 @@
+<% if @story.errors.any? %>
+  <h2>There were errors saving your shirt:</h2>
+  <ul>
+    <% @story.errors.full_messages.each do |msg| %>
+      		<li><%= msg %></li>
+    	<% end %>
+    </ul>
+<% end %>
+
+
+
+<h1>Heya kid, you got a hot tip?</h1>
+<h2>What's the word on the street?</h2>
+
+<%= form_for @story do |s| %>
+ <div>
+    <%= s.label "Story Title" %>
+    <%= s.text_field :title %>
+  </div>
+
+ <div>
+    <%= s.label :category %>
+    <%= s.text_field :category %>
+  </div>	  
+
+<div>
+    <%= s.label "Number of Upvotes" %>
+    <%= s.text_field :upvotes %>
+  </div>
+
+<div>
+    <%= s.label "External Link to Story" %>
+    <%= s.text_field :link %>
+  </div>
+
+<%= s.submit %>
+<% end %>
+<p>
+<%= link_to "Return", stories_path %> to the home page.

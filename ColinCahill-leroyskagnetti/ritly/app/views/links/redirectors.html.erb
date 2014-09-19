@@ -1,0 +1,7 @@
+<% @long_url = Link.where(hash_code: :code) %>
+  	<%if @long_url%>
+  			<%@long_url%>
+  		<%else%>
+  			<%'links#index'%>
+  		<%end%>
+  
