@@ -1,0 +1,23 @@
+<h1>Paintings#index</h1>
+<p>Find me in app/views/painting/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Museum</th>
+      <th>Artist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paintings.each do |painting| %>
+      <tr>
+        <td><%= painting.title %></td>
+        <td><%= painting.museum.name %></td>
+        <td>$<%= painting.artist.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
