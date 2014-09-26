@@ -1,0 +1,20 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Museum</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paintings.each do |painting| %>
+      <tr>
+        <td><%= painting.title %></td>
+        <td><%= painting.artist %></td>
+        <td><%= painting.art_museum %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>

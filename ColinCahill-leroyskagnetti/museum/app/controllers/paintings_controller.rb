@@ -1,5 +1,5 @@
 class PaintingsController < ApplicationController
   def index
-    @paintings = Painting.all
+    @paintings = Painting.search(params[:q])
   end
 end

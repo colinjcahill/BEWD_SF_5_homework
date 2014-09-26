@@ -1,23 +1,15 @@
-<h1>Paintings#index</h1>
-<p>Find me in app/views/painting/index.html.erb</p>
+Greetings, fellow art afficionado.
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Museum</th>
-      <th>Artist</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+You may view a list of the currently available paintings below, or enter a term below to search for a particular painting:
+<p>
+<%= form_tag paintings_path, method: "GET" do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
 
-  <tbody>
-    <% @paintings.each do |painting| %>
-      <tr>
-        <td><%= painting.title %></td>
-        <td><%= painting.museum.name %></td>
-        <td>$<%= painting.artist.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% end %>
+
+
+<p>
+<p>
+
+<%= render 'paintings_list' %>
