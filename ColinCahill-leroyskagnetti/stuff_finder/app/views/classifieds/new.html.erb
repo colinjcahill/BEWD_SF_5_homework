@@ -1,0 +1,19 @@
+Create a new classified:
+<p>
+
+<%= form_for @classified do |f| %>
+	<div><%= f.label "Thing Title" %>
+		<%= f.text_field :title %>
+		</div>  
+<div><%= f.label "Thing Description" %>
+		<%= f.text_field :description %>
+		</div>
+		<div><%= f.label :price %>
+		<%= f.text_field :price %>
+		</div>
+		<div><%= f.label "Category" %>
+		<%= f.collection_select(:category_id, @categories, :id, :name) %>
+		</div>
+
+		<%= f.submit %>
+		<% end %>

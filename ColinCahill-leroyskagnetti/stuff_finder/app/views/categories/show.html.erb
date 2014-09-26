@@ -1,0 +1,12 @@
+<h1>Here are the classifieds for <%= @category.name %>:</h1>
+
+<ul>
+	<% @category.classifieds.each do |classified| %>
+		<li>Title: <%= classified.title %></li>
+		<li>Description: <%= classified.description %></li>
+		<li>Price: $<%= classified.price %></li>
+<p>
+		<% end %>
+		
+</ul>
+
