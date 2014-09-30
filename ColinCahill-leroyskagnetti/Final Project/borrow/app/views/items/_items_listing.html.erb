@@ -1,0 +1,21 @@
+<h1> This is the listing of all items<h2>
+
+<table id = "items_listing">
+	<th>Item Name</th>
+	<th>Description</th>
+	<th>Image</th>
+	<th>Category</th>
+	<th>Condition</th>
+	<th>Location</th>
+	<th>Tags</th>
+<% @items.each do |item| %>
+<tr>
+	<td><%= item.name %></td> 
+	<td><%= item.description %></td> 
+	<td><%= image_tag(item.image_path, size:"100", alt:item.name, class:"item") %></td> 
+	<td><%= item.category %></td> 
+	<td><%= item.condition %></td> 
+</tr>
+<% end %>
+
+</table>
