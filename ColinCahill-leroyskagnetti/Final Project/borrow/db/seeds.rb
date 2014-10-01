@@ -23,6 +23,7 @@ Category.create!(name: "Health & Beauty Supplies")
 Category.create!(name: "Musical Instruments")
 Category.create!(name: "Toys & Games")
 Category.create!(name: "Clothing & Jewelry")
+Category.create!(name: "Other")
 
 Item.create!(name: "A very fasionable rake", description: "This rake has been in the family for so many, so many, many years.  Please take good care of my family\'s rake.", value: 5, image_path: "animal.jpeg", tags: "rake, tool, outside", condition: 65, category_id: 1)
 Item.create!(name: "Pair of effin rad rollerblades", description: "Bro these rollerblades are LEGIT.  Treat em nice", value: 25, image_path: "bicycle.jpeg", tags: "skates, blades, extreme", condition: 85, category_id: 2)

@@ -12,7 +12,8 @@
   </div>
 <div>
     <%= f.label "Item Category" %>
-    <%= f.text_field :category %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name ) %>
+
   </div>
 
   <div>

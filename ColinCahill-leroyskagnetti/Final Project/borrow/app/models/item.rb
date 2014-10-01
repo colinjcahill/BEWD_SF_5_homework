@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  validates_presence_of :name, :category, :description, :value
+  validates_presence_of :name, :category, :description, :value, :category_id
 
 belongs_to :category
 belongs_to :user
@@ -9,22 +9,20 @@ before_validation :defaults
 def defaults
 	self.condition ||= 55
 	self.image_path ||= "dog.jpeg"
+	self.category_id ||=15
 end
 
 
-  def condition_qual
-  	if self.condition >= 90
-  		"Excellent"
-	elsif self.condition >= 75 && self.condition <= 89
-		"Good"
-	elsif self.condition >= 55 && self.condition < 75
-		"Fair"
-	elsif self.condition >= 40 && self.condition < 55
-		"Worn"
-	elsif self.condition < 40
-		"Very Worn"
+def condition_qual
+	grades = {(90..100) =>"Excellent", (75..89)=>"Good", (55..74)=>"Fair", (40..54)=>"Worn", (0..39)=>"Very Worn"}
+
+	grades.each do |quant_score, qual_grade|
+		if quant_score === self.condition
+			return qual_grade
+			else
+		end
 	end
-  end
+end
 
   def tags_array
   	if self.tags.nil?
