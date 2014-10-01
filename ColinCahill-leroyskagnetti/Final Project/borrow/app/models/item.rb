@@ -4,11 +4,11 @@ class Item < ActiveRecord::Base
 belongs_to :category
 belongs_to :user
 
-after_validation :defaults
+before_validation :defaults
 
 def defaults
-	self.condition = 55
-	self.image_path = "dog.jpeg"
+	self.condition ||= 55
+	self.image_path ||= "dog.jpeg"
 end
 
 

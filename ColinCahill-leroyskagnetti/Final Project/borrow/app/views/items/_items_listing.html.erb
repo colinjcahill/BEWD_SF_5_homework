@@ -13,7 +13,7 @@
 	<td><%= item.name %></td> 
 	<td><%= item.description %></td> 
 	<td><%= image_tag(item.image_path, size:"100", alt:item.name, class:"item") %></td> 
-	<td><%= item.category %></td> 
+	<td><%= item.category.name %></td> 
 	<td><%= item.condition_qual %></td> 
 	<td>Location TBD</td> 
 	<td><%= item.tags %></td> 
