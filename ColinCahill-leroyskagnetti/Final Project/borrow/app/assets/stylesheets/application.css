@@ -20,4 +20,4 @@ table, tr {border: 2px solid black; font-family: 'Helvetica-Light'; font-size: 1
 
 th {padding: 20px; font-size: 14px; border: 2px solid black;}
 
-td {padding:5px; font-size: 14px; border: 2px solid black;}
+td {padding:5px; font-size: 12px; border: 2px solid black; font-weight: lighter;}

@@ -19,6 +19,11 @@
     <%= f.label "Approximate Value" %>
     $<%= f.text_field :value %>
   </div>
+
+  <div>
+    <%= f.label "Image Path" %>(For now, please enter a remote/local image path)
+    <%= f.text_field :image_path %>
+  </div>
 <%= f.submit %>
 <% end %>
 
