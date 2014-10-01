@@ -1,6 +1,9 @@
 class Item < ActiveRecord::Base
   validates_presence_of :name, :category, :description, :value
 
+belongs_to :category
+belongs_to :user
+
 after_validation :defaults
 
 def defaults
