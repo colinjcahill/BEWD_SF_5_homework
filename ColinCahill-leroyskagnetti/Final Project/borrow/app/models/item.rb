@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
 
 belongs_to :category
 belongs_to :user
+has_many :loans
 
 before_validation :defaults
 
