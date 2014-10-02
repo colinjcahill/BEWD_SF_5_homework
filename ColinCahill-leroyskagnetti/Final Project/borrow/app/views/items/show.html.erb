@@ -2,7 +2,7 @@
 	<ul>
 	<li>Description: <%= @item.description %></li> 
 	<li><%= image_tag(@item.image_path, size:"100", alt:@item.name, class:"item") %></li> 
-	<li>Category: <%= @item.category %></li> 
+	<li>Category: <%= @item.category.name %></li> 
 	<li>Condition: <%= @item.condition_qual %></li> 
 	<li>Location TBD</li> 
 	<li>Tags: <%= @item.tags %></li>
