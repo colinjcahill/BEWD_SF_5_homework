@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002014548) do
+ActiveRecord::Schema.define(version: 20141002015335) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -43,7 +43,14 @@ ActiveRecord::Schema.define(version: 20141002014548) do
     t.integer  "lender_score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "borrower_id"
+    t.integer  "lender_id"
+    t.integer  "item_id"
   end
+
+  add_index "loans", ["borrower_id"], name: "index_loans_on_borrower_id"
+  add_index "loans", ["item_id"], name: "index_loans_on_item_id"
+  add_index "loans", ["lender_id"], name: "index_loans_on_lender_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
