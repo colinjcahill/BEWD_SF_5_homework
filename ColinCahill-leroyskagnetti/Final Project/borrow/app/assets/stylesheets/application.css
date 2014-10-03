@@ -16,8 +16,14 @@
 
 body {background-color: purple; color: white; font-family: Helvetica;}
 
+a {color:white;}
+
 table, tr {border: 2px solid black; font-family: 'Helvetica-Light'; font-size: 14px;}
 
 th {padding: 20px; font-size: 14px; border: 2px solid black;}
 
 td {padding:5px; font-size: 12px; border: 2px solid black; font-weight: lighter;}
+
+#logged_in_header, #logged_out_header {font-size: 11px;background-color:blue; color:yellow; width: 20%; height: 5%; float:right;}
+
+.center_text {color:yellow;}

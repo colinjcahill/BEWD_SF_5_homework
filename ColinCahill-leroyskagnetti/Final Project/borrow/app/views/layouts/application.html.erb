@@ -14,14 +14,11 @@
 <div style ="text-align:right">
 <% if user_signed_in? %>
 
-Signed in as <%= current_user.email %>
-<%=link_to "Edit Profile", edit_user_registration_path %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<%= render '/logged_in_header' %>
 
 <% else %>
-<h1><%= link_to "Sign Up", new_user_registration_path %>
-	<%= link_to "Sign In", new_user_session_path %>
-</h1>
+
+<%= render '/logged_out_header' %>
 
 <% end %>
 
