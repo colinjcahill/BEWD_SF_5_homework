@@ -35,7 +35,7 @@ gem 'better_errors', group: :development
 gem 'rails-footnotes', group: :development
 gem 'xray-rails', group: :development
 gem 'annotate', group: :development
-
+gem 'better_errors', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
