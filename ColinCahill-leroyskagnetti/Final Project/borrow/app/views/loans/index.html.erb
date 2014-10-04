@@ -9,11 +9,10 @@
  -->
 
 <%= form_tag({controller: "loans", action: "index"}, method: "get", class: "form") do %>
-  <%= radio_button_tag(:category, "borrowed") %>
-<%= label_tag(:category, "test one label") %>
-<%= radio_button_tag(:category, "loaned") %>
-<%= label_tag(:category, "test two label") %>
-<%= submit_tag "Submit" %>
+  <%= radio_button_tag :category, "borrowed", false, :onclick => "this.form.submit();" %>
+<%= label_tag(:category, "View Borroed Items") %>
+<%= radio_button_tag :category, "loaned", false, :onclick => "this.form.submit();" %>
+<%= label_tag(:category, "View Loaned Items") %>
 <% end %>
  
 
