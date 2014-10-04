@@ -1,0 +1,9 @@
+
+<%= flash[:notice] %>
+<% @loans.each do |loan| %>
+<%= loan.inspect %>
+<% if loan.lender_id == current_user.id %>
+	<%= link_to "approve loan" , approve_loan_path(loan) if loan.start_date == nil %>
+<% end %>
+</br>
+<% end %>

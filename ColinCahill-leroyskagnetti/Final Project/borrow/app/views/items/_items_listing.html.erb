@@ -1,3 +1,4 @@
+<div id = "all_items" class = "listing">
 <h1> This is the listing of all items<h2>
 
 <table id = "items_listing">
@@ -8,6 +9,8 @@
 	<th>Condition</th>
 	<th>Location</th>
 	<th>Tags</th>
+	<th>Borrow</th>
+
 <% @items.each do |item| %>
 <tr>
 	<td><%= item.name %></td> 
@@ -17,7 +20,8 @@
 	<td><%= item.condition_qual %></td> 
 	<td>Location TBD</td> 
 	<td><%= item.tags %></td> 
+	<td><%= item.tags %></td> 
 </tr>
 <% end %>
-
 </table>
+</div>

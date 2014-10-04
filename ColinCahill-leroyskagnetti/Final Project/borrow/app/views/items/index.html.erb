@@ -1,7 +1,16 @@
+<div id ="index" class = "listing">
 <h1>Welcome to Borrow.it!<br>
+
 Enter your postal code to search for items nearby.
 
 </h1>
+
+<% if user_signed_in? %>
+
+
+<%= render '/navbar' %>
+
+<% end %>
 
 
 <%= link_to "Create a new item", new_item_path %>
@@ -11,5 +20,6 @@ Enter your postal code to search for items nearby.
 
 <%= render 'items_listing' %>
 
+</div>
 
 
