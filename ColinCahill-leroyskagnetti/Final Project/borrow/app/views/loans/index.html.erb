@@ -1,12 +1,11 @@
 <h1>Greetings, <%= current_user.first_name %></h1>
 <h2>Here are your loans, my friend:</h2>
 
-
-
-<%= render 'loans_listing' %>
-
 <%= flash[:notice] %>
-<% @loans.each do |loan| %>
-	<%= loan.inspect %>
+
+	<% if params[:category] == nil %>
+		<%= render plain: "okay" %>
+	<% else %>
+		<%= render "#{params[:category]}" %>
 	<% end %>
-</br>
+

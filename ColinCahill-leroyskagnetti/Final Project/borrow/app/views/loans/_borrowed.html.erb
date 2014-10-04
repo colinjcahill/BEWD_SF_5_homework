@@ -1,0 +1,24 @@
+<div id = "borrowed" class = "listing">
+<h1> This is the listing of items you have borrowed:<h2>
+
+<table id = "borrowed">
+	<th>Item Borrowed</th>
+	<th>Loan Start Date</th>
+	<th>Loan End Date</th>
+	<th>Lender Name</th>
+	<th>Lender Rating</th>
+	<th>Your Score</th>
+	
+
+<% @loans.each do |loan| %>
+<tr>
+	<td><%= loan.item.name %></td> 
+	<td><%= loan.loan_begin %></td> 
+	<td><%= loan.loan_end %></td>
+	<td><%= loan.lender.first_name %> <%= loan.lender.second_name %></td> 
+	<td><%= loan.lender_score %> (for now)</td> 
+	<td><%= loan.lender_score %> (for now)</td> 
+</tr>
+<% end %>
+</table>
+</div>

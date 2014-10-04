@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   
 
 	def full_address
-		self.address_1.to_s + ', ' + self.address_2.to_s + ', ' + self.city.to_s + ', ' + self.state.to_s + ', ' + self.postal_code.to_s
+		address = [self.address_1, self.address_2, self.city, self.state, self.postal_code, self.country == 'USA' ? nil : self.country]
+		address.compact.join(', ')
 	end
 
 end
