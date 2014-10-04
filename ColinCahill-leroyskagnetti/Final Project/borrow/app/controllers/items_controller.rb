@@ -5,7 +5,7 @@ before_action :authenticate_user!, except: [:index, :show]
     @item = Item.new
   end
   def create
-    @item = Item.create(params.require(:item).permit(:name, :description, :category, :value, :image_path, :tags, :condition, :user_id))
+    @item = Item.create(self.item_params)
     @item.user_id = current_user.id
      if @item.save
       redirect_to @item, notice: "Item successfully created!"
@@ -29,6 +29,10 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def destroy
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :description, :category, :value, :image_path, :tags, :condition, :user_id)
   end
 
 end
