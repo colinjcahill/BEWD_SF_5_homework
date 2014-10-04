@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
 
-devise_for :users
+devise_for :users 
+
+resources :users do
+  resources :loans, only: [:index, :show, :edit, :update]
+  resources :reviews
+  resources :items
+end
 
 root 'items#index'
 
-resources :items
-
-resources :loans do 
-  member do 
-    get :approve  
-  end
+resources :items, only: [:index] do
+  resources :loans, only: [:new, :create]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

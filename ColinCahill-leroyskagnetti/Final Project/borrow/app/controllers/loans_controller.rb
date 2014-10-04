@@ -16,7 +16,8 @@ def index
 end
 
 def new
-	@loan = Loan.new
+	@loan = Loan.new(item_id: params[:item_id])
+
 end
 
 def show
