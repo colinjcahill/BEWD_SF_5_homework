@@ -1,10 +1,31 @@
 <h1>Greetings, <%= current_user.first_name %></h1>
-<h2>Here are your loans, my friend:</h2>
+<h2>This is the loans index page.  <br>Here you can see what you have borrowed and what you have loaned.</h2>
+
+<!-- 
+<%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "I am younger than 21") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "I'm over 21") %>
+ -->
+
+<%= form_tag({controller: "loans", action: "index"}, method: "get", class: "form") do %>
+  <%= radio_button_tag(:category, "borrowed") %>
+<%= label_tag(:category, "test one label") %>
+<%= radio_button_tag(:category, "loaned") %>
+<%= label_tag(:category, "test two label") %>
+<%= submit_tag "Submit" %>
+<% end %>
+ 
+
+<br>
+ <p>
+
+
 
 <%= flash[:notice] %>
 
 	<% if params[:category] == nil %>
-		<%= render plain: "okay" %>
+		<%= render plain: "No category selected.  This is what someone will see by default." %>
 	<% else %>
 		<%= render "#{params[:category]}" %>
 	<% end %>

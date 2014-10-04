@@ -15,6 +15,10 @@ def index
 		
 end
 
+def new
+	@loan = Loan.new
+end
+
 def show
 	render :text => Loan.find(params[:id]).borrower_id
 end
