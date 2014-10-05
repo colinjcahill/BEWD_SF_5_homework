@@ -12,7 +12,7 @@ end
 root 'items#index'
 
 resources :items, only: [:index] do
-  resources :loans, only: [:new, :create]
+  resources :loans, only: [:new, :create, :show]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

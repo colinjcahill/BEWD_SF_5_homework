@@ -25,7 +25,14 @@ def show
 end
 
 
-def create 
+def create
+	@loan = Loan.new(loan_params)
+	 if @loan.save
+      redirect_to 'loans#show', notice: "Your loan request has been submitted.  You will be notified if the lender accepts your request."
+    else
+      render 'new'
+    end
+
 end
 
 def edit
@@ -51,7 +58,7 @@ def query_params
 end
 
 def loan_params
-	params.require(:loan).permit(:borrow)
+	params.require(:loan).permit(:borrower_id, :lender_id, :item_id,:loan_begin, :loan_end)
 end
 
 end
