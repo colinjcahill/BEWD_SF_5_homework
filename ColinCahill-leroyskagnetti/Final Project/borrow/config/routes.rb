@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+root 'items#index'
 
 devise_for :users 
 
@@ -9,10 +10,8 @@ resources :users do
   resources :items
 end
 
-root 'items#index'
-
-resources :items, only: [:index] do
-  resources :loans, only: [:new, :create, :show]
+resources :items, only: [:index, :show] do
+  resources :loans, only: [:new, :create, :show, :index]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
