@@ -36,10 +36,10 @@ def update
 
 end
 
-def approve 
-	@loan = Loan.find(params[:id])
-	# @loan.approve
-end
+# def approve 
+# 	@loan = Loan.find(params[:id])
+# 	# @loan.approve
+# end
 
 def destroy
 end

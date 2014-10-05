@@ -6,9 +6,9 @@ belongs_to :item
 has_many :reviews
 
 
-def approve 
-	self.loan_begin = DateTime.now
-	self.save
-end
+# def approve 
+# 	self.loan_begin = DateTime.now
+# 	self.save
+# end
 
 end
