@@ -21,14 +21,14 @@ def new
 end
 
 def show
-	render :text => Loan.find(params[:id]).borrower_id
+	@loan = Loan.find(params[:id])
 end
 
 
 def create
 	@loan = Loan.new(loan_params)
 	 if @loan.save
-      redirect_to 'loans#show', notice: "Your loan request has been submitted.  You will be notified if the lender accepts your request."
+      redirect_to @loan, notice: "Your loan request has been submitted.  You will be notified if the lender accepts your request."
     else
       render 'new'
     end
