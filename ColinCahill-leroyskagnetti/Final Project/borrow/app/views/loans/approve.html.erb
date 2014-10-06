@@ -1,14 +1,17 @@
+<h1> Please approve or reject the following loan:</h2>
 
-<h1> Hey bro, make a new item:</h2>
+<ul>
 
-<%= form_for @loan do |f| %>
+<li><%= @loan.borrower.first_name %> <%= @loan.borrower.first_name %> has requested to borrow "<%= @loan.item.name %>"</li>
+<li>The borrower is located at <%= @loan.borrower.full_address %></li>
 
-<%= f.datetime_select :loan_begin , :ampm => true, :minute_step => 15  , :include_blank => true %>
-</br>
-<%= f.datetime_select :loan_end , :ampm => true, :minute_step => 15 %>
+</ul>
 
-<%= f.submit %>
+
+<%= form_tag({controller: "loans", action: "approve"}, method: "post", class: "form") do %>
+  <%= radio_button_tag :owner_approved, "true" %>
+<%= label_tag(:owner_approved, "I approve this loan") %>
+<%= radio_button_tag :owner_approved, "false" %>
+<%= label_tag(:owner_approved, "I do not approve this loan") %>
+<%= submit_tag "Submit" %>
 <% end %>
-
-
-

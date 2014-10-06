@@ -47,10 +47,15 @@ def update
 
 end
 
-# def approve 
-# 	@loan = Loan.find(params[:id])
-# 	# @loan.approve
-# end
+def approve 
+	@loan = Loan.find(params[:id])
+	@loan.update(owner_approved: params[:owner_approved])
+		if @loan.save
+			render 'show'
+		else
+			render plain: "did not work"
+		end
+end
 
 def destroy
 end
@@ -62,7 +67,7 @@ def query_params
 end
 
 def loan_params
-	params.require(:loan).permit(:borrower_id, :lender_id, :item_id,:loan_begin, :loan_end)
+	params.require(:loan).permit(:borrower_id, :lender_id, :item_id,:loan_begin, :loan_end, :owner_approved)
 end
 
 end

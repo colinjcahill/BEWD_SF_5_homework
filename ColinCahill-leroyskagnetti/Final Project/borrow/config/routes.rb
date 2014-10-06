@@ -5,7 +5,11 @@ root 'items#index'
 devise_for :users 
 
 resources :users do
-  resources :loans, only: [:index, :show, :edit, :update]
+  resources :loans, only: [:index, :show, :edit, :update, :approve] do
+        member do
+          match :approve, :via => [:get, :post]
+        end
+      end
   resources :reviews
   resources :items
 end

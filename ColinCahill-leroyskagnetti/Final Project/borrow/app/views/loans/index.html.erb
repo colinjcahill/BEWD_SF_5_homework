@@ -4,7 +4,7 @@
 
 <%= form_tag({controller: "loans", action: "index"}, method: "get", class: "form") do %>
   <%= radio_button_tag :category, "borrowed", false, :onclick => "this.form.submit();" %>
-<%= label_tag(:category, "View Borroed Items") %>
+<%= label_tag(:category, "View Borrowed Items") %>
 <%= radio_button_tag :category, "loaned", false, :onclick => "this.form.submit();" %>
 <%= label_tag(:category, "View Loaned Items") %>
 <% end %>

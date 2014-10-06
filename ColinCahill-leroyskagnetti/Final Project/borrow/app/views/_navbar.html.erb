@@ -1,3 +1,7 @@
 <div id ="navbar">
-	NAVBAR LINKS:  CREATE NEW ITEM -------------------- VIEW MY ITEMS  -------------------------- VIEW CURRENT LOANS
+	<%= link_to "My Loans", user_loans_path(current_user.id) %>  
+	 &nbsp&nbsp&nbsp&nbsp
+	 Search
+&nbsp&nbsp&nbsp&nbsp
+	 <%= link_to "Home", root_path %>  
 </div>
