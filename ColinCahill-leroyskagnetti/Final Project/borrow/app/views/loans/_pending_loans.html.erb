@@ -1,0 +1,24 @@
+<h3>These loans are pending approval.  Please approve or reject the following:</h3>
+
+<div id = "pending_loans" class = "listing">
+
+<table id = "loans">
+	<th>Item Name</th>
+	<th>Proposed Start Date</th>
+	<th>Proposed End Date</th>
+	<th>Borrower Name</th>
+	<th>Borrower Location</th>
+	<th>Borrower Rating</th>	
+
+<% @loans.each do |loan| %>
+<tr>
+	<td><%= loan.item.name %></td> 
+	<td><%= loan.loan_begin %></td> 
+	<td><%= loan.loan_end %></td>
+	<td><%= loan.borrower.first_name %> <%= loan.borrower.second_name %></td> 
+	<td><%= loan.borrower.full_address %></td> 
+	<td><%= loan.borrower_score %> (for now)</td> 
+</tr>
+<% end %>
+</table>
+</div>

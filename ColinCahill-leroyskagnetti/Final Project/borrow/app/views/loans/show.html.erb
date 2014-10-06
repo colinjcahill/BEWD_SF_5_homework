@@ -1,0 +1,9 @@
+<h1>Here is your loan info, bud.</h1>
+<ul>
+
+<li>You have requested to borrow "<%= @loan.item.name %>"</li>
+<li>The item owner is <%= @loan.lender.first_name %> <%= @loan.lender.second_name %></li>
+<li>The item is located at <%= @loan.lender.full_address %></li>
+<li>The current status of your loan is: <em><%= @loan.status %></li></em>
+
+</ul>
