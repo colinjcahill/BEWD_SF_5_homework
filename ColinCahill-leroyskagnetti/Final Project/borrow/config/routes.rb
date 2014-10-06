@@ -11,7 +11,7 @@ resources :users do
 end
 
 resources :items, only: [:index, :show] do
-  resources :loans, only: [:new, :create, :show, :index]
+  resources :loans, only: [:new, :create, :show]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

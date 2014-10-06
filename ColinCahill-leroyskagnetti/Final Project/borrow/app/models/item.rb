@@ -33,4 +33,20 @@ end
   	end
   end
 
+def available?
+	item = self.id
+	last_loan = Loan.where(item_id: item).last
+
+	if last_loan.nil? == true || (last_loan.owner_approved == false || last_loan.expired? == true)
+		true
+	else
+		false
+	end
+end
+
+# # def self.available
+# 	where
+# end
+
+
 end

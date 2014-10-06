@@ -1,12 +1,6 @@
 <h1>Greetings, <%= current_user.first_name %></h1>
 <h2>This is the loans index page.  <br>Here you can see what you have borrowed and what you have loaned.</h2>
 
-<!-- 
-<%= radio_button_tag(:age, "child") %>
-<%= label_tag(:age_child, "I am younger than 21") %>
-<%= radio_button_tag(:age, "adult") %>
-<%= label_tag(:age_adult, "I'm over 21") %>
- -->
 
 <%= form_tag({controller: "loans", action: "index"}, method: "get", class: "form") do %>
   <%= radio_button_tag :category, "borrowed", false, :onclick => "this.form.submit();" %>

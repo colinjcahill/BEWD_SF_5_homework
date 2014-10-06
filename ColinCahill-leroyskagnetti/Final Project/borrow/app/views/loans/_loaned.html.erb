@@ -9,6 +9,7 @@
 	<th>Borrower Location</th>
 	<th>Borrower Rating</th>
 	<th>Your Score</th>
+	<th>Approval Status</th>
 	
 
 <% @loans.each do |loan| %>
@@ -20,6 +21,7 @@
 	<td><%= loan.borrower.full_address %></td> 
 	<td><%= loan.borrower_score %> (for now)</td> 
 	<td><%= loan.lender_score %> (for now)</td> 
+	<td><em><%= loan.status %></em></td> 
 </tr>
 <% end %>
 </table>
