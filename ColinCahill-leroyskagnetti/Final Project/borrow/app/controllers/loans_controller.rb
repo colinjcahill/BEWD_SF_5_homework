@@ -17,6 +17,7 @@ end
 
 def new
 	@loan = Loan.new(item_id: params[:item_id])
+
 end
 
 def show
@@ -25,7 +26,10 @@ end
 
 
 def create
-	@loan = Loan.new(item_id: params[:item_id])
+	@loan = Loan.new(loan_params)
+	@loan.item_id = params[:item_id]
+	@loan.borrower_id = current_user.id
+	@loan.lender_id = @loan.item.user_id
 	@item = @loan.item
 
 	 if @loan.save
@@ -33,19 +37,6 @@ def create
     else
       render 'new'
     end
-
-
-# respond_to do |f|
-#       if @loan.save
-#       # update the url passed to redirect_to as below
-#       # f.html { redirect_to item_loan_url(@item,@loan), notice: 'Loan created.' }
-#       # f.json { render action: 'show', status: :created, location: @step }
-#     else
-#       f.html { render action: 'new' }
-#       # f.json { render json: @step.errors, status: :unprocessable_entity }
-#     end
-#   end
-
 end
 
 def edit
