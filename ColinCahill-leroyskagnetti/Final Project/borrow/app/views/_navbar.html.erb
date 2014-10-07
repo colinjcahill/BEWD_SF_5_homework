@@ -5,6 +5,8 @@
 	 Search</div>
 	 <div class = "padded_text">
 	 <%= link_to "Home", root_path %>  </div>
+	 	<div class = padded_text>
+	<%= link_to "My Items", loans_path %></div>
 <div class = "padded_text">
 	 <% pending_count = current_user.pending_loan_count %>
 	 <% if pending_count > 0 %>

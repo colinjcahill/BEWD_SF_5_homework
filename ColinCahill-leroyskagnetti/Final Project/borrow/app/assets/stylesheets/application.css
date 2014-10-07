@@ -34,4 +34,6 @@ td {padding:5px; font-size: 12px; border: 2px solid black; font-weight: lighter;
 
 .padded_text { margin-left:auto; margin-right:auto; padding: 0px 5% 0px 5%; position:relative; display:inline-block;}
 
+.float-left { float: left;}
+
 #items {position: relative;}
