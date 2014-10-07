@@ -44,9 +44,5 @@ def available?
 	end
 end
 
-# # def self.available
-# 	where
-# end
-
 
 end

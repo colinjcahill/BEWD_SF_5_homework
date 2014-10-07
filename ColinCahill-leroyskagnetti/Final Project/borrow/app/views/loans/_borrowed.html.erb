@@ -15,11 +15,18 @@
 <tr>
 	<td><%= loan.item.name %></td> 
 	<td><%= loan.loan_begin %></td> 
-	<td><%= loan.loan_end %></td>
+	<td><%= loan.loan_end %>
+	<% if loan.expired? %>
+			<em class = "expired">Expired</em></td>
+			<% end %>
 	<td><%= loan.lender.first_name %> <%= loan.lender.second_name %></td> 
 	<td><%= loan.lender_score %> (for now)</td> 
 	<td><%= loan.lender_score %> (for now)</td> 
+	<% if loan.expired? %>
+	<td class ="expired"><em>Expired</em></td>
+			<% else %>
 	<td><em><%= loan.status %></em></td> 
+			<% end %>
 </tr>
 <% end %>
 </table>

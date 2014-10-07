@@ -1,5 +1,5 @@
 class Loan < ActiveRecord::Base
-	validates_presence_of :borrower_id, :lender_id, :item_id
+	# validates_presence_of :borrower_id, :lender_id, :item_id
 
 belongs_to :borrower, :class_name => "User"
 belongs_to :lender, :class_name =>"User"     
