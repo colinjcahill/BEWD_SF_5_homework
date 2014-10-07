@@ -1,7 +1,15 @@
 <div id ="navbar">
-	<%= link_to "My Loans", user_loans_path(current_user.id) %>  
-	 &nbsp&nbsp&nbsp&nbsp
-	 Search
-&nbsp&nbsp&nbsp&nbsp
-	 <%= link_to "Home", root_path %>  
+	<div class = padded_text>
+	<%= link_to "My Loans", loans_path %></div>
+	<div class = "padded_text">
+	 Search</div>
+	 <div class = "padded_text">
+	 <%= link_to "Home", root_path %>  </div>
+<div class = "padded_text">
+	 <% pending_count = current_user.pending_loan_count %>
+	 <% if pending_count > 0 %>
+
+	 <%= link_to "Pending loan requests (#{pending_count})" , loans_path({category:"pending"}) %>
+	 <% end %>
+	</div>
 </div>

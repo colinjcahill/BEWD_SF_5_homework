@@ -2,10 +2,8 @@ class LoansController < ApplicationController
 before_action :authenticate_user!
 
 def index
-	
 	if query_params[:category] == 'borrowed'
 		@loans = Loan.where(borrower_id = current_user.id)
-	
 	elsif query_params[:category] == 'loaned' 
 		@loans = Loan.where(lender_id = current_user.id)
 
@@ -44,24 +42,17 @@ def edit
 end
 
 def update
-
+	@loan = Loan.find(params[:id])
+	
+	if @loan.update(loan_params)
+		redirect_to action: :index
+	else 
+		render :approve , alert: "yo couldn't  save !!"
+	end
 end
 
 def approve 
 	@loan = Loan.find(params[:id])
-	# puts params
-	# puts "params ^"
-	# puts loan_params
-	# puts "loan_params ^"
-	# puts @loan
-	# @loan.update(loan_params)
-	if @loan.save
-		puts 'am I running? yes'
-		puts @loan.owner_approved
-		# render 'show'
-	else
-		render plain: "did not work"
-	end
 end
 
 def destroy

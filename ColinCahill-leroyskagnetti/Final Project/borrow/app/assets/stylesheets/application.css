@@ -28,8 +28,10 @@ td {padding:5px; font-size: 12px; border: 2px solid black; font-weight: lighter;
 
 #logged_in_header, #logged_out_header {font-size: 11px;background-color:blue; color:yellow; width: 20%; min-width: 300px; height:30px; float:right;}
 
-#navbar {font-size: 40px; background-color: pink; color:black; width: 100%; height: 50px; float:right; position:relative; margin: 5% 0px 5% 0px; text-align: center}
+#navbar {font-size: 35px; background-color: pink; color:black; width: 100%; height: 50px; position:relative; margin: 5% 0px 5% 0px; display:inline-block; text-align: center}
 
-.center_text {color:yellow;}
+.center_text {  margin-left:auto; margin-right:auto; }
+
+.padded_text { margin-left:auto; margin-right:auto; padding: 0px 5% 0px 5%; position:relative; display:inline-block;}
 
 #items {position: relative;}

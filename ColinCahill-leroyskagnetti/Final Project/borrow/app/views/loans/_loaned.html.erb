@@ -20,7 +20,7 @@
 	<% if loan.expired? %>
 			<em class = "expired">Expired</em></td>
 			<% end %>
-	<td><%= loan.borrower.first_name %> <%= loan.borrower.second_name %></td> 
+	<td><%= loan.borrower.first_name + ' ' + loan.borrower.second_name %></td> 
 	<td><%= loan.borrower.full_address %></td> 
 	<td><%= loan.borrower_score %> (for now)</td> 
 	<td><%= loan.lender_score %> (for now)</td> 

@@ -6,6 +6,8 @@ belongs_to :lender, :class_name =>"User"
 belongs_to :item
 has_many :reviews
 
+
+
 def status
 	if self.owner_approved == true
 		"Approved"

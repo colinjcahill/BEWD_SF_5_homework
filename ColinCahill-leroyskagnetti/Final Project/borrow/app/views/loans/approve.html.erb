@@ -7,11 +7,13 @@
 
 </ul>
 
-
-<%= form_tag({controller: "loans", action: "approve"}, method: "post", class: "form") do %>
-  <%= radio_button_tag :owner_approved, "true" %>
-<%= label_tag(:owner_approved, "I approve this loan") %>
-<%= radio_button_tag :owner_approved, "false" %>
-<%= label_tag(:owner_approved, "I do not approve this loan") %>
-<%= submit_tag "Submit" %>
+<%= form_for  @loan do |f| %> 
+<%# form_tag({controller: "loans", action: "approve"}, method: "post", class: "form") do %>
+  <%= f.radio_button :owner_approved, "true" %>
+<%= f.label(:owner_approved, "I approve this loan") %>
+<%= f.radio_button :owner_approved, "false" %>
+<%= f.label(:owner_approved, "I do not approve this loan") %>
+<%= f.submit "Submit" %>
 <% end %>
+
+

@@ -6,6 +6,7 @@
 	<th>Loan Start Date</th>
 	<th>Loan End Date</th>
 	<th>Lender Name</th>
+	<th>Lender Location</th>
 	<th>Lender Rating</th>
 	<th>Your Score</th>
 	<th>Approval Status</th>
@@ -19,7 +20,9 @@
 	<% if loan.expired? %>
 			<em class = "expired">Expired</em></td>
 			<% end %>
-	<td><%= loan.lender.first_name %> <%= loan.lender.second_name %></td> 
+	<td><%= loan.lender.first_name + ' ' + loan.lender.second_name %></td> 
+	<td><%= loan.lender.full_address %></td> 
+	
 	<td><%= loan.lender_score %> (for now)</td> 
 	<td><%= loan.lender_score %> (for now)</td> 
 	<% if loan.expired? %>
