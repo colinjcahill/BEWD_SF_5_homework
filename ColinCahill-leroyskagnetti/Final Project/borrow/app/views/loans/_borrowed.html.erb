@@ -1,4 +1,14 @@
+
+
+
 <div id = "borrowed" class = "listing">
+
+	<% if @loans.empty? %>
+
+Sorry, you don't have any loans.  Check out the items on the home page and make a request.
+
+<% else %>
+
 <h1> This is the listing of items you have borrowed:<h2>
 
 <table id = "borrowed">
@@ -33,4 +43,7 @@
 </tr>
 <% end %>
 </table>
+
+<% end %>
+
 </div>

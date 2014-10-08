@@ -3,10 +3,9 @@ before_action :authenticate_user!
 
 def index
 	if query_params[:category] == 'borrowed'
-		@loans = Loan.where(borrower_id = current_user.id)
-	elsif query_params[:category] == 'loaned' 
-		@loans = Loan.where(lender_id = current_user.id)
-
+		@loans = Loan.where(borrower_id: current_user.id)
+	elsif query_params[:category] == 'loaned'
+		@loans = Loan.where(lender_id: current_user.id)
 	else
 		@loans = Loan.where('lender_id= ? or borrower_id= ?' , current_user.id , current_user.id)
 	end

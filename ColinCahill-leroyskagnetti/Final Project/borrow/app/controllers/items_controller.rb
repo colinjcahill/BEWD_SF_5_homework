@@ -15,7 +15,7 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def index
-    if (params[:user_id].to_i == current_user.id) == true
+    if current_user && (params[:user_id].to_i == current_user.id) == true
       @items = Item.where(user_id: current_user.id)
     else
       @items = Item.all

@@ -1,4 +1,13 @@
 <div id = "loans" class = "listing">
+
+<% if @loans.empty? %>
+
+
+No one has requested any of your items!  Make more stuff!
+
+
+<% else %>
+
 <h1> This is the listing of your loans:<h2>
 
 <table id = "loans">
@@ -32,4 +41,7 @@
 </tr>
 <% end %>
 </table>
+
+
+<% end %>
 </div>
