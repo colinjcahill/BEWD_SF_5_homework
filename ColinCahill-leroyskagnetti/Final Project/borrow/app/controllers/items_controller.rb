@@ -16,18 +16,28 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def index
     if current_user == nil
-      @items = Item.all
+      @items = Item.all.sort(updated_at: :desc)
     elsif (params[:user_id].to_i == current_user.id) == true
-      @items = Item.where(user_id: current_user.id)
+      @items = User.find(params[:user_id]).items
     else
-      @items = Item.where.not(user_id: current_user.id)
+      @items = Item.where.not(user_id: current_user.id).order(updated_at: :desc)
     end    
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+      if @item.save
+        render :show
+      else
+        flash.now[:error] =  @item.errors[:name].join(". ")
+        render :edit
+        
+      end
   end
 
   def show
@@ -38,7 +48,7 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :category, :value, :image_path, :tags, :condition, :user_id)
+    params.require(:item).permit(:name, :description, :category_id, :value, :image_path, :tags, :condition, :user_id)
   end
 
 end

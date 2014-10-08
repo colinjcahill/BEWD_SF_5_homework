@@ -45,3 +45,10 @@ td {padding:5px; font-size: 12px; border: 2px solid black; font-weight: lighter;
 #items {position: relative;}
 
 .listing { position:relative; display: inline-block;}
+
+#logo { float:left; font-family: "Futura", "Avenir Medium", "Calibri", "Consolas"; font-size: 24px;}
+
+#logo a, #logo em {color:yellow;}
+
+.error { color:red; font-style: italic}
+

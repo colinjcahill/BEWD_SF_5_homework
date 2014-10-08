@@ -1,2 +1,35 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h1>Feel free to update your item info here!</h1>
+<ul>
+
+<%= form_for @item do |f| %>
+<div>
+    <%= f.label "Item Name:" %>
+    <%= f.text_field :name, size: 50 %>
+  </div>
+
+<div>
+    <%= f.label "Item Description:" %>
+    <%= f.text_field :description, size: 100 %>
+  </div>
+<div>
+    <%= f.label "Item Category:" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name ) %>
+
+  </div>
+
+  <div>
+    <%= f.label "Approximate Value:" %>
+    $<%= f.text_field :value, size: 4 %>
+  </div>
+
+  <div>
+    <%= f.label "Image Path: (For now, please enter a remote/local image path)" %>
+    <%= f.text_field :image_path, size: 100 %>
+  </div>
+<%= f.submit %>
+<% end %>
+
+
+
+
+</ul>

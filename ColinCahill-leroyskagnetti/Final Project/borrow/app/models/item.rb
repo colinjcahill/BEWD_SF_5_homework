@@ -1,5 +1,7 @@
 class Item < ActiveRecord::Base
 	  validates_presence_of :name, :category, :description, :value, :category_id
+	  validates :name, length: { minimum: 10, message: "Your item name is too short.  Please be more descriptive." }
+	  validates :description, length: { minimum: 20, message: "Your item description is too short.  Please be more descriptive." }
 
 	belongs_to :category
 	belongs_to :user
@@ -8,9 +10,11 @@ class Item < ActiveRecord::Base
 	before_validation :defaults
 
 	def defaults
-		self.condition ||= 55
-		self.image_path ||= "dog.jpeg"
-		self.category_id ||=15
+		self.condition ||= rand(100)
+		self.image_path ||= "http://lorempixel.com/200/200"
+		self.category_id ||= rand(15)
+		self.value ||= rand(500)
+		self.tags ||="boring, default, blah"
 	end
 
 
@@ -44,9 +48,13 @@ class Item < ActiveRecord::Base
 		end
 	end
 
-	def self.user_items
-		Item.where(user_id: current_user.id)
-	end
+	# def self.other_users_items
+	# 	Item.where.not(user_id: current_user.id).order(updated_at: :desc)
+	# end
+
+	# def self.user_items
+	# 	Item.where(user_id: current_user.id).order(updated_at: :desc)
+	# end
 
 
 

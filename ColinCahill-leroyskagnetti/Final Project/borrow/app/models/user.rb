@@ -9,11 +9,11 @@ class User < ActiveRecord::Base
 
 
   def borrower_loans
-  	Loan.where(borrower_id: self.id)
+  	Loan.where(borrower_id: self.id).order(updated_at: :desc)
   end
 
   def loaner_loans
-  	Loan.where(lender_id: self.id)
+  	Loan.where(lender_id: self.id).order(updated_at: :desc)
   end
 
   def pending_loans?
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def pending_loans
-  	Loan.where(owner_approved: nil , lender_id: self.id)
+  	Loan.where(owner_approved: nil , lender_id: self.id).order(updated_at: :desc)
   end
 
   def pending_loan_count

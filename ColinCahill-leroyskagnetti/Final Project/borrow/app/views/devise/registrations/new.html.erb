@@ -19,7 +19,7 @@
   <%= f.text_field :city, autofocus: true %></div>
 
   <div><%= f.label "State" %><br />
-  <%= f.text_field :state, autofocus: true %></div>
+    <%= f.select :state, options_for_select(us_states) %></div>
 
     <div><%= f.label "Postal Code" %><br />
   <%= f.text_field :postal_code, autofocus: true %></div>
