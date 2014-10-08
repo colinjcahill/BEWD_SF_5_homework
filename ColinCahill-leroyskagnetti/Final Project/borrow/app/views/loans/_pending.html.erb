@@ -18,6 +18,7 @@
 	<td><%= loan.borrower.first_name %> <%= loan.borrower.second_name %></td> 
 	<td><%= loan.borrower.full_address %></td> 
 	<td><%= loan.borrower_score %> (for now)</td> 
+	<td><%= link_to "View Loan Request", approve_loan_path(loan)%></td>
 </tr>
 <% end %>
 </table>
