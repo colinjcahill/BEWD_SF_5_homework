@@ -44,5 +44,10 @@ def available?
 	end
 end
 
+def self.user_items
+	Item.where(user_id: current_user.id)
+end
+
+
 
 end

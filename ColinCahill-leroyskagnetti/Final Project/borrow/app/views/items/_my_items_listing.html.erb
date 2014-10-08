@@ -1,21 +1,14 @@
-<div id = "items" class = "listing">
-<u><h1>Borrow.it Items</h1></u>
+<div id = "my_items" class = "listing large_text">
 
-<h2><br>
+<%= notice %>
 
-Enter your postal code to search for items nearby.
+<% if @items.empty? %>
 
-</h2>
+<h4>You haven't created any items yet.  <br><br><%= link_to "Create a new item ", new_item_path %>to earn points which will enable you to borrow things from other people!</h4>
 
+<% else %>
 
-
-
-<p>
-
-
-
-<br><p>Here are the newest items which have been created. <br>Enter a search term and your zipcode to find items you can borrow nearby.
-
+<h1> Here are the items you own:<h2>
 
 <table id = "items">
 	<th>Item Name</th>
@@ -23,7 +16,7 @@ Enter your postal code to search for items nearby.
 	<th>Image</th>
 	<th>Category</th>
 	<th>Condition</th>
-	<th>Location</th>
+	<th>Approximate Value</th>
 	<th>Tags</th>
 
 <% @items.each do |item| %>
@@ -34,11 +27,14 @@ Enter your postal code to search for items nearby.
 		<td><%= image_tag(item.image_path, size:"100", alt:item.name, class:"item") %></td> 
 		<td><%= item.category.name %></td> 
 		<td><%= item.condition_qual %></td> 
-		<td>Location TBD</td> 
+		<td>$<%= item.value %></td> 
 		<td><%= item.tags %></td> 
-		<td><%= link_to "Request this item", new_item_loan_path(item.id) %></td>
+	
 	</tr>
 	<% end %>
 <% end %>
 </table>
+
+<% end %>
+
 </div>

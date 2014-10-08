@@ -1,20 +1,16 @@
 <div id ="items_index" class = "listing">
-<h1>Welcome to Borrow.it!<br>
 
-Enter your postal code to search for items nearby.
+<%= puts "params = #{params}" %>
 
-</h1>
-
-
-
-
-<p>
-
-
-
-<br><p>Here are the newest items which have been created. <br>Enter a search term and your zipcode to find items you can borrow nearby.
+<% if params[:user_id] == nil %>
 
 <%= render 'items_listing' %>
+
+<% else %>
+
+<%= render 'my_items_listing' %>
+
+<% end %>
 
 </div>
 
