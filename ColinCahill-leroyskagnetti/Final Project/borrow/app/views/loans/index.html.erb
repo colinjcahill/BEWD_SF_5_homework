@@ -1,3 +1,5 @@
+<%= flash[:notice] %>
+
 <h1>Greetings, <%= current_user.first_name %></h1>
 <h2>This is the loans index page.  <br>Here you can see what you have borrowed and what you have loaned.</h2>
 
@@ -13,12 +15,11 @@
 <br>
  <p>
 
-
-
-<%= flash[:notice] %>
-
 	<% if params[:category] == nil %>
-		<%= render plain: "No category selected.  This is what someone will see by default." %>
+		<%= render text: "Please select a loan category." %>
+			<% if current_user.pending_loans? %>
+ 			<%= render 'pending' %>
+ 			<% end %>
 	<% else %>
 		<%= render "#{params[:category]}" %>
 	<% end %>

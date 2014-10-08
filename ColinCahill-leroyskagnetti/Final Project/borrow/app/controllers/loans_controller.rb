@@ -2,14 +2,20 @@ class LoansController < ApplicationController
 before_action :authenticate_user!
 
 def index
-	if query_params[:category] == 'borrowed'
-		@loans = Loan.where(borrower_id: current_user.id)
-	elsif query_params[:category] == 'loaned'
-		@loans = Loan.where(lender_id: current_user.id)
+	if params[:category].nil? && current_user.pending_loans?
+		@loans = current_user.pending_loans
 	else
-		@loans = Loan.where('lender_id= ? or borrower_id= ?' , current_user.id , current_user.id)
+		if query_params[:category] == 'borrowed'
+			@loans = current_user.borrower_loans
+		elsif query_params[:category] == 'loaned'
+			@loans = current_user.loaner_loans
+		elsif query_params[:category] == 'pending'
+			@loans = current_user.pending_loans
+		else
+			@loans = Loan.where('lender_id= ? or borrower_id= ?' , current_user.id , current_user.id)
+		end
+			
 	end
-		
 end
 
 def new
