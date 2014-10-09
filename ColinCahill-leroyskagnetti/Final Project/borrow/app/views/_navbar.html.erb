@@ -2,18 +2,18 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> --><!-- 
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
+      </button> -->
       <div class="navbar-brand"><div id ="logo"><%= link_to "Borrow.it", :root %><br><em style="font-size: 10px;">An App For Borrowing...itEms</em></div></div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+    <div class ="table">
+      <ul id ="horizontal-list">
         <li><%= link_to "Home", root_path, class: cp(root_path) %></li>
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -34,7 +34,7 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
- -->      <ul class="nav navbar-nav navbar-right">
+ --> 
         <li><%= link_to "My Loans", loans_path, class: cp(loans_path) %></li>
         <li><%= link_to "My Items", items_path({user_id: current_user.id}), class: cp(items_path) %></li>
         <!-- <li class="dropdown">
@@ -47,28 +47,17 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li> -->
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
-
-<!-- <div id ="navbar">
-	<div class = padded_text>
-	</div>
-	<div class = "padded_text">
-	 Search</div>
-	 <div class = "padded_text">
-	   </div>
-	 	<div class = padded_text>
-	
-<div id ="pending_items">
+        <li id ="pending_items">
 	 <% pending_count = current_user.pending_loan_count %>
 	 <% if pending_count > 0 %>
 
 	 <%= link_to "New loan requests (#{pending_count})" , loans_path({category:"pending"}) %>
 	 <% end %>
-	</div>
-</div> -->
+	</li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+	
+

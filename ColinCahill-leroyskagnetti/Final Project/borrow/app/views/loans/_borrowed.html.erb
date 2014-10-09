@@ -25,8 +25,8 @@ Sorry, you don't have any loans.  Check out the items on the home page and make 
 <% @loans.each do |loan| %>
 <tr>
 	<td><%= loan.item.name || "Item Deleted" %></td> 
-	<td><%= loan.loan_begin %></td> 
-	<td><%= loan.loan_end %>
+	<td><%= loan.loan_begin.strftime("%a, %b %d, %Y %I:%M%p") %></td> 
+	<td><%= loan.loan_end.strftime("%a, %b %d, %Y %I:%M%p") %>
 	<% if loan.expired? %>
 			<em class = "expired">Expired</em></td>
 			<% end %>
