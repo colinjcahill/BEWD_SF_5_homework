@@ -1,18 +1,7 @@
 class ItemsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
 
-  def new
-    @item = Item.new
-  end
-  def create
-    @item = Item.create(self.item_params)
-    @item.user_id = current_user.id
-     if @item.save
-      redirect_to @item, notice: "Item successfully created!"
-    else
-      render 'new'
-    end
-  end
+  
 
   def index
     if current_user == nil
@@ -26,6 +15,21 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def edit
     @item = Item.find(params[:id])
+  end
+
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.create(self.item_params)
+    @item.user_id = current_user.id
+    if @item.save
+      redirect_to @item, notice: "Item successfully created!"
+    else
+      flash[:errors] = @item.errors
+      render 'new'
+    end
   end
 
   def update
@@ -45,6 +49,9 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path({user_id: current_user.id}), notice: "Your item listing, #{@item.name}, has been deleted."
   end
 
   def item_params
