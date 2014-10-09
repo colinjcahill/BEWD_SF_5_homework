@@ -3,7 +3,7 @@
 <h1>Greetings, <%= current_user.first_name %></h1>
 <h2>This is the loans index page.  <br>Here you can see what you have borrowed and what you have loaned.</h2>
 
-<p style="padding-top: 10px;">
+<p class ="padding_bottom">
 <%= form_tag({controller: "loans", action: "index"}, method: "get", class: "form") do %>
   <%= radio_button_tag :category, "borrowed", false, :onclick => "this.form.submit();" %>
 <%= label_tag(:category, "View Borrowed Items") %>

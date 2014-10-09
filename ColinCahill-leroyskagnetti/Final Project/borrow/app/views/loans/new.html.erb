@@ -1,16 +1,20 @@
-<h1>You are trying to request a new item.</h1>
-<h2>The item you'd like is "<%= @loan.item.name %>"</h2>
+<div id ="loan_new">
 
+	<h1>You are trying to request a new item: "<%= @loan.item.name %>"</h1>
 
-Please enter the date and time when you'd like to borrow the item:
+	Please enter the date and time when you'd like to borrow the item:
 
-<%= form_for @loan, url: {action: "create"}, html: {class: "form"} do |f| %><br>
+	<%= form_for @loan, url: {action: "create"}, html: {class: "form"} do |f| %><br>
+		<div id ="loans" class = "datetime">
+		Loan begin Date & Time:
+		<%= f.datetime_select :loan_begin , :ampm => true, :minute_step => 15  ,  :start_year => 2014, :default =>(DateTime.now + 1.hour) %>
+		</br>
 
-Loan begin Date & Time:
-<%= f.datetime_select :loan_begin , :ampm => true, :minute_step => 15  ,  :start_year => 2014, :default =>(DateTime.now + 1.hour) %>
-</br>
-
-Loan end Date & Time:
-<%= f.datetime_select :loan_end , :ampm => true, :minute_step => 15  ,  :start_year => 2014, :default =>(DateTime.now + 3.days + 1.hour) %>
-<%= f.submit %>
-<% end %>
+		Loan end Date & Time:
+		<%= f.datetime_select :loan_end , :ampm => true, :minute_step => 15  ,  :start_year => 2014, :default =>(DateTime.now + 3.days + 1.hour) %>
+		</div>
+		<div class ="button">
+	<%= f.submit %>
+	<% end %>
+	</div>
+</div>
