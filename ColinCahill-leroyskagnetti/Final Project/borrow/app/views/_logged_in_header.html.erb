@@ -1,7 +1,7 @@
 <div id ="logged_in_header">
-Signed in as <%= current_user.email %>
+<%= truncate("Signed in as #{current_user.email}", length: 35) %>
 	<div class = "center_text float-left">
-	<h4>Hi, <%= current_user.first_name %>!
+	<h4>Hi, <%= truncate(current_user.first_name, length: 12) %>!
 	</div></h4>
 
 	<div>

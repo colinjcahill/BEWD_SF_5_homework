@@ -23,7 +23,7 @@ No one has requested any of your items!  Make more stuff!
 
 <% @loans.each do |loan| %>
 <tr>
-	<td><%= loan.item.name %></td> 
+	<td><%= loan.item ? loan.item.name : "Item Deleted" %></td> 
 	<td><%= loan.loan_begin %></td> 
 	<td><%= loan.loan_end %>
 	<% if loan.expired? %>

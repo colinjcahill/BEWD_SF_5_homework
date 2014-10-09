@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
-	  validates_presence_of :name, :category, :description, :value, :category_id 
+	  validates_presence_of :name, :category, :description, :value, :category_id, :image_path
+
 	  validates :name, length: { minimum: 10, message: "Your item name is too short.  Please be more descriptive." }
 	  validates :description, length: { minimum: 20, message: "Your item description is too short.  Please be more descriptive." }
 
@@ -10,10 +11,10 @@ class Item < ActiveRecord::Base
 	before_validation :defaults
 
 	def defaults
-		self.condition ||= rand(100)
-		self.image_path ||= "http://lorempixel.com/200/200"
-		self.category_id ||= rand(15)
-		self.value ||= rand(500)
+		self.condition ||=rand(100)
+		self.image_path ||=rand(100).to_s
+		self.category_id ||=rand(15)
+		self.value ||=rand(500)
 		self.tags ||="boring, default, blah"
 	end
 
@@ -36,6 +37,11 @@ class Item < ActiveRecord::Base
 	  	self.tags.downcase.split(',')
 	  	end
 	  end
+
+	  def item_loans
+	  	Loan.where(item_id: self.id).count
+	  end
+
 
 	def available?
 		item = self.id

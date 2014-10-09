@@ -5,7 +5,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def index
     if current_user == nil
-      @items = Item.all.sort(updated_at: :desc)
+      @items = Item.all.order(updated_at: :desc)
     elsif (params[:user_id].to_i == current_user.id) == true
       @items = User.find(params[:user_id]).items
     else
@@ -50,8 +50,12 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+      if @item.item_loans > 1
+        flash[:error] = "Could not delete item.  Item exists in more than one loan listing."
+      else
+        @item.destroy
     redirect_to items_path({user_id: current_user.id}), notice: "Your item listing, #{@item.name}, has been deleted."
+      end
   end
 
   def item_params

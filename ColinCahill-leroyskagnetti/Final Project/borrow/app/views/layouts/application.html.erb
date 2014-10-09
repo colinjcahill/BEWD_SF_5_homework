@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style type="text/css">
+  body {
+    background-image: url("<%= random_background_image %>"); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;
+  }
+</style>
   <title>Borrow</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -10,6 +15,7 @@
 
 
 <div class="container">
+
 <div style ="text-align:right">
 <% if user_signed_in? %>
 
@@ -28,9 +34,7 @@
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
        <div class ="error">
-    <% flash[:errors] && flash[:errors].each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
+    <%= flash[:errors] -%>
 </div>
 <%= yield %>
 </div>
