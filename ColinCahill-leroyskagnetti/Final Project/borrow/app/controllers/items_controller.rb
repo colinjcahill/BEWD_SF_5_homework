@@ -9,7 +9,7 @@ before_action :authenticate_user!, except: [:index, :show]
     elsif (params[:user_id].to_i == current_user.id) == true
       @items = User.find(params[:user_id]).items
     else
-      @items = Item.where.not(user_id: current_user.id).order(updated_at: :desc)
+      @items = Item.not_user_items(current_user.id).available_items
     end    
   end
 
@@ -27,7 +27,7 @@ before_action :authenticate_user!, except: [:index, :show]
     if @item.save
       redirect_to @item, notice: "Item successfully created!"
     else
-      flash[:errors] = @item.errors
+      flash[:errors] = @item.errors.full_messages.to_sentence
       render 'new'
     end
   end

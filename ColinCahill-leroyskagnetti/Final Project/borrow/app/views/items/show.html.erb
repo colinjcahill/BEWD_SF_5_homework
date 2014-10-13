@@ -1,9 +1,7 @@
 <h1>Item view: <%= @item.name %><h1>
-	<ul>
-	<li>Description: <%= @item.description %></li> 
-	<li><%= image_tag(@item.image_path, size:"100", alt:@item.name, class:"item") %></li> 
-	<li>Category: <%= @item.category.name %></li> 
-	<li>Condition: <%= @item.condition_qual %></li> 
-	<li>Location: <%= @item.user.full_address %></li> 
-	<li>Tags: <%= @item.tags %></li>
-</ul>
+	<h2>Description: <%= @item.description %><br>
+	Image: <%= image_tag(@item.image_path, size:"100", alt:@item.name, class:"item") %> <br>
+	Category: <%= @item.category.name %> <br>
+	Condition: <%= @item.condition_qual %> <br>
+	Location: <%= @item.user.full_address %> <br>
+	Tags: <%= @item.tags %></h2>

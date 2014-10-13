@@ -11,7 +11,7 @@
 		 <% pending_count = current_user.pending_loan_count %>
 		 <% if pending_count > 0 %>
 
-		 <%= link_to "New loan requests" , loans_path({category:"pending"}) %> <span class="badge"> <%= link_to "#{current_user.pending_loan_count}" , loans_path({category:"pending"}) %></span>
+		 <%= link_to "New loan requests!" , loans_path({category:"pending"}) %> <span class="badge"> <%= link_to "#{current_user.pending_loan_count}" , loans_path({category:"pending"}) %></span>
 		 <% end %>
 		</li>
 	      </ul>

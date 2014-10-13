@@ -54,6 +54,17 @@ class Item < ActiveRecord::Base
 		end
 	end
 
+
+	def self.available_items
+		items = Item.all.order(created_at: :desc).collect {|item| item.available? ? item : nil}.compact
+			
+	end
+
+	def self.not_user_items(user)
+		Item.where.not(user_id: user).order(updated_at: :desc)
+	end
+
+
 	# def self.other_users_items
 	# 	Item.where.not(user_id: current_user.id).order(updated_at: :desc)
 	# end
