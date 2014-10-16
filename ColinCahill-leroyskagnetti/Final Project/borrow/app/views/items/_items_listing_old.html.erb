@@ -1,0 +1,36 @@
+<div id = "items" class = "listing">
+<u><h1>Borrow.it Items</h1></u>
+
+<h2><br>
+
+Enter your postal code to search for items nearby.
+
+</h2>
+<p>
+<br><p>Here are the newest items which have been created. <br>Enter a search term and your zipcode to find items you can borrow nearby.
+
+<table id = "items">
+	<th>Item Name</th>
+	<th>Description</th>
+	<th>Image</th>
+	<th>Category</th>
+	<th>Condition</th>
+	<th>Location</th>
+	<th>Tags</th>
+
+<% @items.each do |item| %>
+	<% if item.available? %>
+	<tr>
+		<td><%= item.name %></td> 
+		<td><%= item.description %></td> 
+		<td><%= image_tag(item.image_path, size:"100", alt:item.name, class:"item") %></td> 
+		<td><%= item.category.name %></td> 
+		<td><%= item.condition_qual %></td> 
+		<td><%= item.user.full_address %></td> 
+		<td><%= item.tags %></td> 
+		<td><%= link_to "Request this item", new_item_loan_path(item.id) %></td>
+	</tr>
+	<% end %>
+<% end %>
+</table>
+</div>

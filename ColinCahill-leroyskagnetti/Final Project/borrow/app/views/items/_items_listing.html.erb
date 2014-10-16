@@ -3,34 +3,28 @@
 
 <h2><br>
 
-Enter your postal code to search for items nearby.
-
 </h2>
 <p>
-<br><p>Here are the newest items which have been created. <br>Enter a search term and your zipcode to find items you can borrow nearby.
+<br><p>Here are the newest items which have been created: <br>
 
-<table id = "items">
-	<th>Item Name</th>
-	<th>Description</th>
-	<th>Image</th>
-	<th>Category</th>
-	<th>Condition</th>
-	<th>Location</th>
-	<th>Tags</th>
 
 <% @items.each do |item| %>
-	<% if item.available? %>
-	<tr>
-		<td><%= item.name %></td> 
-		<td><%= item.description %></td> 
-		<td><%= image_tag(item.image_path, size:"100", alt:item.name, class:"item") %></td> 
-		<td><%= item.category.name %></td> 
-		<td><%= item.condition_qual %></td> 
-		<td><%= item.user.full_address %></td> 
-		<td><%= item.tags %></td> 
-		<td><%= link_to "Request this item", new_item_loan_path(item.id) %></td>
-	</tr>
+<div id ="item_<%= item.id %>" class ="item row">
+	<h1><%= item.name %></h1>
+	<div id ="image" class="col-md-3">
+	<%= image_tag(item.image_path, size:"200", alt:item.name, class:"image") %>
+	</div>
+	<div id ="item-desc" class="col-md-9">
+		Category: <%= item.category.name %> <br>
+		Item Description: <%= item.description %><br>
+		Condition: <%= item.condition_qual %> <br>
+		You can find this item here: <%= item.user.full_address %> <br>
+		Tags: <%= item.tags %> <br><br>
+		<h2 style="background-color: rgb(210, 210, 4); width: 240px;"><%= link_to "Request this item", new_item_loan_path(item.id) %></h2><br>
+		</div>
+	</div>
 	<% end %>
-<% end %>
-</table>
+
 </div>
+
+	

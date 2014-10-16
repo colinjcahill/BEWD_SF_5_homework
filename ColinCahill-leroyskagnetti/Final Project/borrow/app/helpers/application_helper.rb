@@ -93,5 +93,6 @@ http://fillthewell.com/wp-content/uploads/2014/04/beautiful-libraries-34.jpg)
 	  # image_files = %w( .jpg .gif .png )
 	  # files = Dir.entries('app/assets/images/backgrounds').delete_if { |x| !image_files.index(x[-4,4]) }
 	  # files[rand(files.length)]
+	  
 	end
 end

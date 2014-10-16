@@ -11,12 +11,13 @@ class Item < ActiveRecord::Base
 	before_validation :defaults
 
 	def defaults
-		self.condition ||=rand(100)
-		self.image_path ||=rand(100).to_s
+		self.condition ||= rand(100)
+		self.image_path = rand(100).to_s if self.image_path.blank?
 		self.category_id ||=rand(15)
 		self.value ||=rand(500)
 		self.tags ||="boring, default, blah"
 	end
+
 
 
 	def condition_qual
