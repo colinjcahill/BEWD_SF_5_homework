@@ -4,7 +4,8 @@ root 'items#index'
 
 devise_for :users 
 
-
+resources :categories, only: [:index]
+resources :loans, only: [:index]
 resources :loans, only: [:index, :show, :edit, :update] do
     member do
       match :approve, :via => [:get, :post]
